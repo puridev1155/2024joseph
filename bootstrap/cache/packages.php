@@ -1,13 +1,13 @@
 <?php return array (
   'althinect/filament-spatie-roles-permissions' => 
   array (
-    'providers' => 
-    array (
-      0 => 'Althinect\\FilamentSpatieRolesPermissions\\FilamentSpatieRolesPermissionsServiceProvider',
-    ),
     'aliases' => 
     array (
       'FilamentSpatieRolesPermissions' => 'Althinect\\FilamentSpatieRolesPermissions\\FilamentSpatieRolesPermissionsFacade',
+    ),
+    'providers' => 
+    array (
+      0 => 'Althinect\\FilamentSpatieRolesPermissions\\FilamentSpatieRolesPermissionsServiceProvider',
     ),
   ),
   'anourvalar/eloquent-serialize' => 
@@ -89,24 +89,24 @@
   ),
   'flowframe/laravel-trend' => 
   array (
-    'providers' => 
-    array (
-      0 => 'Flowframe\\Trend\\TrendServiceProvider',
-    ),
     'aliases' => 
     array (
       'Trend' => 'Flowframe\\Trend\\TrendFacade',
     ),
+    'providers' => 
+    array (
+      0 => 'Flowframe\\Trend\\TrendServiceProvider',
+    ),
   ),
   'jantinnerezo/livewire-alert' => 
   array (
-    'providers' => 
-    array (
-      0 => 'Jantinnerezo\\LivewireAlert\\LivewireAlertServiceProvider',
-    ),
     'aliases' => 
     array (
       'LivewireAlert' => 'Jantinnerezo\\LivewireAlert\\LivewireAlertFacade',
+    ),
+    'providers' => 
+    array (
+      0 => 'Jantinnerezo\\LivewireAlert\\LivewireAlertServiceProvider',
     ),
   ),
   'kirschbaum-development/eloquent-power-joins' => 
@@ -139,24 +139,24 @@
   ),
   'livewire/livewire' => 
   array (
-    'providers' => 
-    array (
-      0 => 'Livewire\\LivewireServiceProvider',
-    ),
     'aliases' => 
     array (
       'Livewire' => 'Livewire\\Livewire',
     ),
+    'providers' => 
+    array (
+      0 => 'Livewire\\LivewireServiceProvider',
+    ),
   ),
   'maatwebsite/excel' => 
   array (
-    'providers' => 
-    array (
-      0 => 'Maatwebsite\\Excel\\ExcelServiceProvider',
-    ),
     'aliases' => 
     array (
       'Excel' => 'Maatwebsite\\Excel\\Facades\\Excel',
+    ),
+    'providers' => 
+    array (
+      0 => 'Maatwebsite\\Excel\\ExcelServiceProvider',
     ),
   ),
   'nesbot/carbon' => 
@@ -189,13 +189,13 @@
   ),
   'ryangjchandler/blade-capture-directive' => 
   array (
-    'providers' => 
-    array (
-      0 => 'RyanChandler\\BladeCaptureDirective\\BladeCaptureDirectiveServiceProvider',
-    ),
     'aliases' => 
     array (
       'BladeCaptureDirective' => 'RyanChandler\\BladeCaptureDirective\\Facades\\BladeCaptureDirective',
+    ),
+    'providers' => 
+    array (
+      0 => 'RyanChandler\\BladeCaptureDirective\\BladeCaptureDirectiveServiceProvider',
     ),
   ),
   'spatie/laravel-permission' => 
