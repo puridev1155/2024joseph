@@ -6,7 +6,7 @@
                 <div class="md:col-span-3 xl:col-span-2">
                     <div>
                         <a href="#">
-                            <img src="{{ asset('images/logo.png') }}" width="180" alt="Logo">
+                            <img src="{{ asset('images/joseph_logo.png') }}" width="180" alt="Logo">
                         </a>
                         <p class="mt-6 text-base text-default-800">
                             Integer auctor aliquet martor, sed lorem malesuada eros blandit

@@ -11,7 +11,7 @@
             <div class="w-full max-w-3xl overflow-hidden rounded-lg backdrop-blur-3xl"> 
                 <div class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
                     <div class="mx-auto">
-                        <a href="/"><img src="{{ asset('images/logo.png') }}" width="230" alt="Logo"></a>
+                        <a href="/"><img src="{{ asset('images/joseph_logo.png') }}" width="230" alt="Logo"></a>
                     </div>
                     <div class="mt-5 sm:mx-auto sm:w-full sm:max-w-[480px]">
                         <div class="bg-white px-6 py-12 shadow-lg sm:rounded-lg sm:px-12">

@@ -14,11 +14,7 @@
                         <div class="temp-logo relative inline-block">
                             <!-- Container for Ping Effect and Logo -->
                             <a href="/" class="block relative">
-                                <span class="absolute flex h-4 w-4 left-[13px] top-1/4 transform -translate-x-1/2 -translate-y-1/2">
-                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
-                    
-                                </span>
-                                <img src="{{ asset('images/logo.png') }}" width="180" alt="Logo" class="relative">
+                                <img src="{{ asset('images/joseph_logo.png') }}" width="180" alt="Logo" class="relative">
                             </a>
                         </div>
                     </div>

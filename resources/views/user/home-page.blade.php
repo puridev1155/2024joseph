@@ -409,7 +409,7 @@ class="bg-[url('/public/images/bg-lines-2.png')] bg-cover bg-no-repeat py-40 dar
                 <div class="xl:col-span-2 md:col-span-3">
                     <div>
                         <a href="#">
-                            <img src="{{ asset('images/logo.png') }}" width="180" alt="Logo">
+                            <img src="{{ asset('images/joseph_logo.png') }}" width="180" alt="Logo">
                         </a>
                         <p class="text-base font-medium  text-default-800 mt-6">Integer auctor aliquet martor, sed lorem malesuada eros blandit eget. Proin lacinia mortoc id odio vestibulum.</p>
                         <form class="space-y-2 mt-6">

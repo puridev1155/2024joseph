@@ -130,7 +130,7 @@
                 <div class="xl:col-span-2 md:col-span-3">
                     <div>
                         <a href="#">
-                            <img src="{{ asset('images/logo.png') }}" width="180" alt="Logo">
+                            <img src="{{ asset('images/joseph_logo.png') }}" width="180" alt="Logo">
                         </a>
                         <p class="text-base font-medium  text-default-800 mt-6">에녹메리선교회 장학금 신청은 회원가입 이후에 가능합니다. 아래 버튼을 클릭하여 가입하세요.</p>
                         <div class="relative mt-5">
