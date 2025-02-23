@@ -9,33 +9,18 @@
     'menuPosition' => 'fixed',
     'navItems' => [
         (object)['id' => '홈','name' => '홈', 'url' => '/'],
-        (object)['id' => '선교회','name' => '선교회', 'url' => '#', 'subMenu' => 
+        (object)['id' => '소개','name' => '소개', 'url' => '#', 'subMenu' => 
         [
-            (object)['name' => '소개', 'url' => '/mission'],
-            (object)['name' => '조직도', 'url' => '/mission-organization'],
-            (object)['name' => '로고', 'url' => '/mission-logo'],
+            (object)['name' => '학교소개', 'url' => '/school'],
+            (object)['name' => '교사소개', 'url' => '/school-organization'],
+            (object)['name' => '커리큘럼', 'url' => '/school-curriculum'],
             
         ]],
-        (object)['id' => '장학회','name' => '장학회', 'url' => '#', 'subMenu' => 
+        (object)['id' => '입학안내','name' => '입학안내', 'url' => '#', 'subMenu' => 
         [
-            (object)['name' => '소개', 'url' => '/scholarship'],
-            (object)['name' => '장학금 신청', 'url' => '/scholarship-register'],
-            
+            (object)['name' => '입학안내정보', 'url' => '/admission'],
         ]],
-        (object)['id' => '엔젤리더스','name' => '엔젤리더스', 'url' => '#', 'subMenu' => 
-        [
-            (object)['name' => '소개', 'url' => '/leader'],
-            (object)['name' => '졸업생 사진', 'url' => '/leader-graduate'],
-           
-            
-        ]],
-        (object)['id' => '게시판','name' => '게시판', 'url' => '#', 'subMenu' => 
-        [
-            (object)['name' => '공지사항', 'url' => '/notice'],
-            (object)['name' => '게시판', 'url' => '/notice-ask'],
-            (object)['name' => 'FAQ', 'url' => '/notice-faq'],
-            
-        ]],
+        (object)['id' => '공지사항','name' => '공지사항', 'url' => '/notice'],
         (object)['id' => '후원안내','name' => '후원안내', 'url' => '#', 'subMenu' => 
         [
             (object)['name' => '후원안내', 'url' => '/donation'],            
@@ -53,8 +38,8 @@ $id= request()->query('id');
                     <div class="p-6 relative">
                         <div class="flex h-full items-center justify-center py-5">
                             <div class="text-center max-w-3xl mx-auto relative">
-                                <span class="py-1 px-3 rounded-md text-sm font-medium uppercase tracking-wider text-white bg-white/10">Scholarship</span>
-                                <h1 class="md:text-5xl/snug text-3xl font-bold text-white mt-3"> 장학금 신청하기</h1>
+                                <span class="py-1 px-3 rounded-md text-sm font-medium uppercase tracking-wider text-white bg-white/10">New Student</span>
+                                <h1 class="md:text-5xl/snug text-3xl font-bold text-white mt-3"> 신입생 </h1>
                             
                             </div>
                         </div><!-- flex End -->
@@ -74,12 +59,12 @@ $id= request()->query('id');
     @endif
         <div class="grid lg:grid-cols-2 grid-cols-2 items-center rounded-md overflow-hidden bg-default-100 dark:bg-default-50 divide-y lg:divide-y-0 lg:divide-x divide-default-200">
             <div class="relative w-full lg:w-full mx-auto order-1">
-                <a href="/scholarship-register">
+                <a href="/admission">
                 <div class="group">
                     <div class="w-full group-hover:translate-x-2 group-hover:-translate-y-2 transition-all duration-500">
-                        <div class="p-6 bg-orange text-center dark:bg-default-50 {{ $id == NULL ? 'bg-orange' : 'bg-white' }}">
+                        <div class="p-6 {{ $id == 2 ? 'bg-orange' : 'bg-white' }} text-center dark:bg-default-50">
                             
-                            <h2 class="text-xl font-medium text-default-950 ">일반 신청하기</h2>
+                            <h2 class="text-xl font-medium text-default-950 ">신입생</h2>
                            
                         </div>
                     </div>
@@ -88,12 +73,12 @@ $id= request()->query('id');
                 </a>
             </div>
             <div class="relative w-full lg:w-full mx-auto order-1">
-                <a href="/scholarship-register?id=2">
+                <a href="/admission?id=2">
                 <div class="group">
                     <div class="w-full group-hover:translate-x-2 group-hover:-translate-y-2 transition-all duration-500">
                         <div class="p-6 {{ $id == 2 ? 'bg-orange' : 'bg-white' }} text-center dark:bg-default-50">
                         
-                            <h2 class="text-xl font-medium text-default-950 ">목회자/선교사 자녀 신청하기</h2>
+                            <h2 class="text-xl font-medium text-default-950 ">재학생</h2>
                             
                         </div>
                     </div>
@@ -108,36 +93,15 @@ $id= request()->query('id');
     
             <h1 class="md:text-5xl/snug text-3xl font-bold mt-10">{{ $single->title }}</h1>
                 <p class="mt-10 text-2xl font-medium text-default-800">
-                    에녹메리선교회 상반기와 하반기 장학금은 모두 일회성 장학금 지급이며 추후에 재신청이 가능합니다.
+                
                 </p>
             </div>
         </div>
         <!-- flex End-->
 
         <div class="grid grid-cols-1 items-center w-100">
-            @if(!$single->register_agree)
-            <div class="md:container md:mx-auto">
-                <div class="divide-y divide-default-200 rounded-md bg-default-50 shadow">
-                    <div class="flex flex-wrap items-center gap-6 p-6 sm:flex-nowrap">
-                        <div>
-                            <div class="flex size-12 items-center justify-center rounded-md border border-default-200 bg-white/5 text-xl text-default-950">
-                                종료
-                            </div>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-medium text-default-950">
-                                신청기간 종료
-                            </h3>
-                            <p class="mt-3 text-base">
-                                이번 기수는 마감되었습니다. 다음에 신청바랍니다. 감사합니다.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- flex End-->
-                </div>
-            </div>
-            @else
             <div class="max-w-4xl mx-auto">
+                
                 <div class="divide-y divide-default-200 rounded-md bg-default-50 shadow">
                     <div class="flex flex-wrap items-center gap-6 p-6 sm:flex-nowrap">
                         <div class="hidden md:block">
@@ -147,10 +111,37 @@ $id= request()->query('id');
                         </div>
                         <div>
                             <h3 class="text-2xl font-medium text-default-950">
-                                신청기간
+                                입학 안내
                             </h3>
                             <p class="mt-3 text-base">
-                                {!! $single->register_date !!}
+                                입학 상담: 학교 측으로 연락을 주시면, 입학 가능 여부를 상담해 드립니다. <br />
+                                입학 신청서 작성 및 제출: 입학 상담 후, 학교 측에서 본교 소정양식으로 제출 서류를 보내드립니다. <br />
+                                학습능력 진단 테스트(Diagnostic Test): 영어로 된 능력평가 시험을 통해 각 과목별 학년을 평가합니다. <br />
+                                최종 입학 결정: 합격 통보를 받으면, 각종 서류 제출 및 등록금 납부를 합니다. <br />
+                                학부모 학생 오리엔테이션: 입학 결정 후, 오리엔테이션이 진행됩니다. <br />
+
+                            </p>
+                        </div>
+                    </div>
+                    <!-- flex End-->
+                    <div class="flex flex-wrap items-center gap-6 p-6 sm:flex-nowrap">
+                        <div class="hidden md:block">
+                            <div class="flex size-12 items-center justify-center rounded-md border border-default-200 bg-white/5 text-xl text-default-950">
+                                02
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-medium text-default-950">
+                                입학 자격 
+                            </h3>
+                            <p class="mt-3 text-base">
+                                학부모-학생 오리엔테이션 참석,<br />
+학부모 <가정치유학교> 참석<br />
+(매주 목요일 저녁 7시반, 80% 참석율) <br /><br />
+학부모-학생 오리엔테이션 참석,<br />
+                                학부모 <가정치유학교> 참석<br />
+                                (매주 목요일 저녁 7시반) 
+
                             </p>
                         </div>
                     </div>
@@ -166,10 +157,18 @@ $id= request()->query('id');
                         </div>
                         <div>
                             <h3 class="text-2xl font-medium text-default-950">
-                               지원대상
+                                모집 학생 인원
                             </h3>
                             <p class="mt-3 text-base">
-                                {!! $single->register_target !!}
+                                전학년(Pre-K: 5~6세) : 8명 
+                                <br />
+                                초~중1 : 12명<br /> 
+                                (SOT 커리큘럼은 전 과정이 영어로 진행되기 때문에 최소한 3년의 교육기간이 필요하므로, 중학교 1학년 이상의 학생은 받지 않습니다.)    
+                                <br /><br />
+                                입학 문의는 아래 번호로 연락 부탁드립니다.  <br />
+02-900-1163 (요셉학교 사무실) <br />
+서울특별시 노원구 월계동 951-1 (301호) 
+
                             </p>
                         </div>
                     </div>
@@ -185,124 +184,24 @@ $id= request()->query('id');
                         </div>
                         <div>
                             <h3 class="text-2xl font-medium text-default-950">
-                                지원자격
+                                후원 안내 
                             </h3>
                             <p class="mt-3 text-base">
-                                {!! $single->register_qualification !!}
+                                “후원자를 사역의 동역자로” <br /><br />
+                                요셉학교는 후원자를 사역의 동역자로 생각합니다. 우리가 하나님과 사람들로부터 관대한 후원을 받은 것같이 우리도 하나님의 손길이 필요한 자들에게 관대한 후원자들이 되어야 한다고 믿습니다. 
+                                <br /><br />
+                                신한은행 140-009-275680 열방제자교회(요셉학교) 
+                                
                             </p>
                         </div>
                     </div>
                     <!-- flex End-->
 
-                    <div class="flex flex-wrap items-center gap-6 p-6 sm:flex-nowrap">
-                        <div class="hidden md:block">
-                            <div
-                                class="flex size-12 items-center justify-center rounded-md border border-default-200 bg-white/5 text-xl text-default-950"
-                            >
-                                04
-                            </div>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-medium text-default-950">
-                                지원금액
-                            </h3>
-                            <p class="mt-3 text-base">
-                                {!! $single->register_price !!}
-                            </p>
-                        </div>
-                    </div>
-                    <!-- flex End-->
-
-                    <div class="flex flex-wrap items-center gap-6 p-6 sm:flex-nowrap">
-                        <div class="hidden md:block">
-                            <div
-                                class="flex size-12 items-center justify-center rounded-md border border-default-200 bg-white/5 text-xl text-default-950"
-                            >
-                                05
-                            </div>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-medium text-default-950">
-                                지원절차
-                            </h3>
-                            <p class="mt-3 text-base">
-                                {!! $single->register_process !!}
-                            </p>
-                        </div>
-                    </div>
-                    <!-- flex End-->
-
-                    <div class="flex flex-wrap items-center gap-6 p-6 sm:flex-nowrap">
-                        <div class="hidden md:block">
-                            <div
-                                class="flex size-12 items-center justify-center rounded-md border border-default-200 bg-white/5 text-xl text-default-950"
-                            >
-                                06
-                            </div>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-medium text-default-950">
-                                제출서류
-                            </h3>
-                            <p class="mt-3 text-base">
-                                {!! $single->register_document !!}
-                            </p>
-                        </div>
-                    </div>
-                    <!-- flex End-->
-
-                    <div class="flex flex-wrap items-center gap-6 p-6 sm:flex-nowrap">
-                        <div class="hidden md:block">
-                            <div
-                                class="flex size-12 items-center justify-center rounded-md border border-default-200 bg-white/5 text-xl text-default-950"
-                            >
-                                07
-                            </div>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-medium text-default-950">
-                                온라인신청
-                            </h3>
-                            <p class="mt-3 text-base">
-                                @if (Auth::guest())
-    <!-- 게스트인 경우 -->
-    <a href="/login/form" class="inline-flex items-center justify-center gap-2 text-base py-3 px-8 rounded-md text-white bg-primary/90 hover:bg-primary transition-all duration-700">로그인하기
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="move-right" class="lucide lucide-move-right h-6 w-6"><path d="M18 8L22 12L18 16"></path><path d="M2 12H22"></path></svg>
-    </a> *신청은 로그인 회원만 가능합니다.
-@else
-    <!-- 로그인한 경우 -->
-    <a href="/scholarship-application?id={{$single->id}}" class="inline-flex items-center justify-center gap-2 text-base py-3 px-8 rounded-md text-white bg-primary/90 hover:bg-primary transition-all duration-700">신청하기
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="move-right" class="lucide lucide-move-right h-6 w-6"><path d="M18 8L22 12L18 16"></path><path d="M2 12H22"></path></svg>
-    </a> *신청은 로그인 회원만 가능합니다.
-@endif
-                               
-                            </p>
-                        </div>
-                    </div>
-                    <!-- flex End-->
-
-                    <div class="flex flex-wrap items-center gap-6 p-6 sm:flex-nowrap">
-                        <div class="hidden md:block">
-                            <div
-                                class="flex size-12 items-center justify-center rounded-md border border-default-200 bg-white/5 text-xl text-default-950"
-                            >
-                                08
-                            </div>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-medium text-default-950">
-                                문의처
-                            </h3>
-                            <p class="mt-3 text-base">
-                                {!! $single->register_contact !!}
-                            </p>
-                        </div>
-                    </div>
-                    <!-- flex End-->
+                    
+                    
                 </div>
             </div>
             <!-- col End-->
-            @endif
             
         </div>
         <!-- grid End-->

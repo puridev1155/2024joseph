@@ -17,12 +17,14 @@ class MissionController extends Controller
         $path = $request->path();
         $dotPath = str_replace('-', '.', $path);
 
-        if($dotPath == "mission") {
-            $dotPath = "mission.index";
+        if($dotPath == "school") {
+            $dotPath = "school.index";
             $single = Single::where('id', 1)->first();
-        } else if ($dotPath == "mission.logo") {
+        } else if ($dotPath == "school.organization") {
             $single = Single::where('id', 2)->first();
-        } else if ($dotPath == "mission.organization") {
+        } else if ($dotPath == "school.curriculum") {
+            $single = Single::where('id', 3)->first();
+        } else {
             $single = NULL;
         }
 

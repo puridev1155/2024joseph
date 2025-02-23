@@ -9,33 +9,18 @@
     'menuPosition' => 'fixed',
     'navItems' => [
         (object)['id' => '홈','name' => '홈', 'url' => '/'],
-        (object)['id' => '선교회','name' => '선교회', 'url' => '#', 'subMenu' => 
+        (object)['id' => '소개','name' => '소개', 'url' => '#', 'subMenu' => 
         [
-            (object)['name' => '소개', 'url' => '/mission'],
-            (object)['name' => '조직도', 'url' => '/mission-organization'],
-            (object)['name' => '로고', 'url' => '/mission-logo'],
+            (object)['name' => '학교소개', 'url' => '/school'],
+            (object)['name' => '교사소개', 'url' => '/school-organization'],
+            (object)['name' => '커리큘럼', 'url' => '/school-curriculum'],
             
         ]],
-        (object)['id' => '장학회','name' => '장학회', 'url' => '#', 'subMenu' => 
+        (object)['id' => '입학안내','name' => '입학안내', 'url' => '#', 'subMenu' => 
         [
-            (object)['name' => '소개', 'url' => '/scholarship'],
-            (object)['name' => '장학금 신청', 'url' => '/scholarship-register'],
-            
+            (object)['name' => '입학안내정보', 'url' => '/admission'],
         ]],
-        (object)['id' => '엔젤리더스','name' => '엔젤리더스', 'url' => '#', 'subMenu' => 
-        [
-            (object)['name' => '소개', 'url' => '/leader'],
-            (object)['name' => '졸업생 사진', 'url' => '/leader-graduate'],
-           
-            
-        ]],
-        (object)['id' => '게시판','name' => '게시판', 'url' => '#', 'subMenu' => 
-        [
-            (object)['name' => '공지사항', 'url' => '/notice'],
-            (object)['name' => '게시판', 'url' => '/notice-ask'],
-            (object)['name' => 'FAQ', 'url' => '/notice-faq'],
-            
-        ]],
+        (object)['id' => '공지사항','name' => '공지사항', 'url' => '/notice'],
         (object)['id' => '후원안내','name' => '후원안내', 'url' => '#', 'subMenu' => 
         [
             (object)['name' => '후원안내', 'url' => '/donation'],            
@@ -65,34 +50,62 @@
 </section>
 <section>
     <div class="bg-white py-24 sm:py-32">
+        
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
-          <div class="mx-auto grid max-w-2xl grid-cols-1 items-start gap-x-8 gap-y-16 sm:gap-y-24 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-            <div class="lg:pr-4">
-              <div class="relative  overflow-hidden rounded-3xl bg-gray-900 px-6 pb-9 pt-96 shadow-2xl sm:px-12 lg:max-w-lg lg:px-8 lg:pb-8 xl:px-10 xl:pb-10">
-<<<<<<< HEAD
-                <img class="absolute inset-0 h-full w-full object-cover " src="/images/angel.png" alt="">
-=======
-                <img class="absolute inset-0 h-full w-full object-cover " src="/images/graduate.png" alt="">
->>>>>>> 7bd6442d9c84fc67c31d8ed9edab70c66da73e9f
-                <div class="absolute inset-0 bg-gray-900 mix-blend-multiply"></div>
-                <div class="absolute left-1/2 top-1/2 -ml-16 -translate-x-1/2 -translate-y-1/2 transform-gpu blur-3xl" aria-hidden="true">
-                  <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#eecddb] to-[#a6a2fd] opacity-40" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+            <p class="text-base font-semibold leading-7 text-indigo-600">{{ $single->en_title }}</p>
+            <h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{ $single->title }}</h1>
+          <div class="mx-auto grid max-w-2xl grid-cols-1 items-start gap-x-8 gap-y-20 sm:gap-y-24 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+            <div>
+                <div class="text-base leading-7 text-gray-700 lg:max-w-lg">
+                  <div class="max-w-xl leading-loose mt-5 py-10">
+                    <img src="{{ asset('images/profile/kim.png') }}" width="100%" />
+                  </div>
+                  <h1 class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-4xl">김은하 교장</h1>
+                  <p class="text-base font-semibold leading-7 text-indigo-600">
+                    <br />
+                    - 現 열방제자교회 공동 담임목사 <br />
+- 現 가정치유학교 사역 <br /> 
+- 하와이 열방대학 YWAM 수료 <br /> 
+- 백석대학교 졸업 
+
+                  </p>
                 </div>
+                
               </div>
-            </div>
             <div>
               <div class="text-base leading-7 text-gray-700 lg:max-w-lg">
-                <p class="text-base font-semibold leading-7 text-indigo-600">{{ $single->en_title }}</p>
-                <h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{ $single->title }}</h1>
-                <div class="max-w-xl leading-loose mt-5">
-                    {!! $single->content !!}
+                <div class="max-w-xl leading-loose mt-5 py-10">
+                    <img src="{{ asset('images/profile/mary.png') }}" width="100%" />
                 </div>
+                <h1 class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-4xl">양메리 강사</h1>
+                <p class="text-base font-semibold leading-7 text-indigo-600">
+                    <br />
+                    - 現 장로회신학대학교 신대원 재학 <br />
+- Emory University(에모리 대학교) 졸업 <br />
+- Seoul Foreign School(서울외국인학교) 졸업 
+
+                </p>
               </div>
               
             </div>
+            <div>
+                <div class="text-base leading-7 text-gray-700 lg:max-w-lg">
+                  <div class="max-w-xl leading-loose mt-5 py-10">
+                    <img src="{{ asset('images/profile/sooji.png') }}" width="100%" />
+                  </div>
+                  <h1 class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-4xl">이수지 강사</h1>
+                  <p class="text-base font-semibold leading-7 text-indigo-600">
+                    <br />
+                    - 現 열방제자교회 사역 간사 <br />
+                    - 한신대학교 중어중문학과 졸업                     
+                  </p>
+                </div>
+                
+              </div>
           </div>
         </div>
       </div>
+      
       
 </section>
 

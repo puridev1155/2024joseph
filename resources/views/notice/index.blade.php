@@ -9,33 +9,18 @@
     'menuPosition' => 'fixed',
     'navItems' => [
         (object)['id' => '홈','name' => '홈', 'url' => '/'],
-        (object)['id' => '선교회','name' => '선교회', 'url' => '#', 'subMenu' => 
+        (object)['id' => '소개','name' => '소개', 'url' => '#', 'subMenu' => 
         [
-            (object)['name' => '소개', 'url' => '/mission'],
-            (object)['name' => '조직도', 'url' => '/mission-organization'],
-            (object)['name' => '로고', 'url' => '/mission-logo'],
+            (object)['name' => '학교소개', 'url' => '/school'],
+            (object)['name' => '교사소개', 'url' => '/school-organization'],
+            (object)['name' => '커리큘럼', 'url' => '/school-curriculum'],
             
         ]],
-        (object)['id' => '장학회','name' => '장학회', 'url' => '#', 'subMenu' => 
+        (object)['id' => '입학안내','name' => '입학안내', 'url' => '#', 'subMenu' => 
         [
-            (object)['name' => '소개', 'url' => '/scholarship'],
-            (object)['name' => '장학금 신청', 'url' => '/scholarship-register'],
-            
+            (object)['name' => '입학안내정보', 'url' => '/admission'],
         ]],
-        (object)['id' => '엔젤리더스','name' => '엔젤리더스', 'url' => '#', 'subMenu' => 
-        [
-            (object)['name' => '소개', 'url' => '/leader'],
-            (object)['name' => '졸업생 사진', 'url' => '/leader-graduate'],
-           
-            
-        ]],
-        (object)['id' => '게시판','name' => '게시판', 'url' => '#', 'subMenu' => 
-        [
-            (object)['name' => '공지사항', 'url' => '/notice'],
-            (object)['name' => '게시판', 'url' => '/notice-ask'],
-            (object)['name' => 'FAQ', 'url' => '/notice-faq'],
-            
-        ]],
+        (object)['id' => '공지사항','name' => '공지사항', 'url' => '/notice'],
         (object)['id' => '후원안내','name' => '후원안내', 'url' => '#', 'subMenu' => 
         [
             (object)['name' => '후원안내', 'url' => '/donation'],            

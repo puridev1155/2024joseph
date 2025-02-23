@@ -17,14 +17,14 @@ use App\Livewire\MyPosts;
 
 Route::resource('/', HomeController::class);
 
-//Mission 메뉴
-Route::resource('/mission', MissionController::class);
-Route::get('/mission-logo', [MissionController::class, 'index'])->name('mission.logo');
-Route::get('/mission-organization', [MissionController::class, 'index'])->name('mission.organization');
+//school 메뉴
+Route::resource('/school', MissionController::class);
+Route::get('/school-organization', [MissionController::class, 'index'])->name('school.organization');
+Route::get('/school-curriculum', [MissionController::class, 'index'])->name('school.curriculum');
 
 //Scholarship 메뉴
 Route::resource('/scholarship', ScholarshipController::class);
-Route::get('/scholarship-register', [ScholarshipController::class, 'index'])->name('scholarship.register');
+Route::get('/admission', [ScholarshipController::class, 'index'])->name('admission.index');
 Route::get('/scholarship-application', [ScholarshipController::class, 'apply'])->name('scholarship.apply');
 Route::post('/scholarship-submit', [ScholarshipController::class, 'submitForm'])->name('register.submit');
 

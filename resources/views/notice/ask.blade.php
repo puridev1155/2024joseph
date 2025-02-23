@@ -11,9 +11,9 @@
         (object)['id' => '홈','name' => '홈', 'url' => '/'],
         (object)['id' => '선교회','name' => '선교회', 'url' => '#', 'subMenu' => 
         [
-            (object)['name' => '소개', 'url' => '/mission'],
-            (object)['name' => '조직도', 'url' => '/mission-organization'],
-            (object)['name' => '로고', 'url' => '/mission-logo'],
+            (object)['name' => '소개', 'url' => '/school'],
+            (object)['name' => '조직도', 'url' => '/school-organization'],
+            (object)['name' => '로고', 'url' => '/school-curriculum'],
             
         ]],
         (object)['id' => '장학회','name' => '장학회', 'url' => '#', 'subMenu' => 

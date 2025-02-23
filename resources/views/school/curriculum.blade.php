@@ -9,40 +9,24 @@
     'menuPosition' => 'fixed',
     'navItems' => [
         (object)['id' => '홈','name' => '홈', 'url' => '/'],
-        (object)['id' => '선교회','name' => '선교회', 'url' => '#', 'subMenu' => 
+        (object)['id' => '소개','name' => '소개', 'url' => '#', 'subMenu' => 
         [
-            (object)['name' => '소개', 'url' => '/mission'],
-            (object)['name' => '조직도', 'url' => '/mission-organization'],
-            (object)['name' => '로고', 'url' => '/mission-logo'],
+            (object)['name' => '학교소개', 'url' => '/school'],
+            (object)['name' => '교사소개', 'url' => '/school-organization'],
+            (object)['name' => '커리큘럼', 'url' => '/school-curriculum'],
             
         ]],
-        (object)['id' => '장학회','name' => '장학회', 'url' => '#', 'subMenu' => 
+        (object)['id' => '입학안내','name' => '입학안내', 'url' => '#', 'subMenu' => 
         [
-            (object)['name' => '소개', 'url' => '/scholarship'],
-            (object)['name' => '장학금 신청', 'url' => '/scholarship-register'],
-            
+            (object)['name' => '입학안내정보', 'url' => '/admission'],
         ]],
-        (object)['id' => '엔젤리더스','name' => '엔젤리더스', 'url' => '#', 'subMenu' => 
-        [
-            (object)['name' => '소개', 'url' => '/leader'],
-            (object)['name' => '졸업생 사진', 'url' => '/leader-graduate'],
-           
-            
-        ]],
-        (object)['id' => '게시판','name' => '게시판', 'url' => '#', 'subMenu' => 
-        [
-            (object)['name' => '공지사항', 'url' => '/notice'],
-            (object)['name' => '게시판', 'url' => '/notice-ask'],
-            (object)['name' => 'FAQ', 'url' => '/notice-faq'],
-            
-        ]],
+        (object)['id' => '공지사항','name' => '공지사항', 'url' => '/notice'],
         (object)['id' => '후원안내','name' => '후원안내', 'url' => '#', 'subMenu' => 
         [
             (object)['name' => '후원안내', 'url' => '/donation'],            
         ]],
         ]
     ])
-
 
 <section id="home" class="relative overflow-hidden active mt-24">
     <div class="px-4 md:px-10">
@@ -52,8 +36,8 @@
                     <div class="p-6 relative">
                         <div class="flex h-full items-center justify-center py-5">
                             <div class="text-center max-w-3xl mx-auto relative">
-                                <span class="py-1 px-3 rounded-md text-sm font-medium uppercase tracking-wider text-white bg-white/10">Organization</span>
-                                <h1 class="md:text-5xl/snug text-3xl font-bold text-white mt-3">조직도</h1>
+                                <span class="py-1 px-3 rounded-md text-sm font-medium uppercase tracking-wider text-white bg-white/10">{{ $single->en_title }}</span>
+                                <h1 class="md:text-5xl/snug text-3xl font-bold text-white mt-3">{{ $single->title }}</h1>
                             
                             </div>
                         </div><!-- flex End -->
@@ -63,17 +47,33 @@
         </div>
     </div><!-- Container End -->
 </section>
-<section class="mt-10">
-<div class="relative bg-white">
-  <div class="mx-auto grid max-w-7xl lg:grid-cols-1">
-  <img class="h-30 w-full bg-gray-50 object-cover lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-1/3" src="/images/organization.jpg" alt="">
-    <div class="pt-16 sm:pb-10 sm:pt-20 lg:col-start-1 lg:px-8 lg:pt-10">
-      <div class="mx-auto max-w-2xl lg:mr-0 lg:max-w-2xlg">
-        <img src="images/organization.png" />
+<section>
+    <div class="bg-white py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="mx-auto grid max-w-2xl grid-cols-1 items-start gap-x-8 gap-y-16 sm:gap-y-24 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+            <div class="lg:pr-4">
+              <div class="relative  overflow-hidden rounded-3xl bg-gray-900 px-6 pb-9 pt-96 shadow-2xl sm:px-12 lg:max-w-lg lg:px-8 lg:pb-8 xl:px-10 xl:pb-10">
+                <img class="absolute inset-0 h-full w-full object-cover " src="{{ asset('images/intro_logo.png') }}" alt="">
+                <div class="absolute inset-0 bg-gray-900 mix-blend-multiply"></div>
+                <div class="absolute left-1/2 top-1/2 -ml-16 -translate-x-1/2 -translate-y-1/2 transform-gpu blur-3xl" aria-hidden="true">
+                  <div class="aspect-[1097/845] w-[68.5625rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="text-base leading-7 text-gray-700 lg:max-w-lg">
+                <p class="text-base font-semibold leading-7 text-indigo-600">{{ $single->en_title }}</p>
+                <h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{ $single->title }}</h1>
+                <div class="max-w-xl leading-loose mt-5">
+                    {!! $single->content !!}
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
+      
 </section>
 
 

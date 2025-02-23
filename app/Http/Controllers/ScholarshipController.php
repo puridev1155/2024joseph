@@ -18,38 +18,12 @@ class ScholarshipController extends Controller
         $path = $request->path();
         $dotPath = str_replace('-', '.', $path);
 
-        if($dotPath == "scholarship") {
-            $dotPath = "scholarship.index";
+        if($dotPath == "admission") {
+            $dotPath = "admission.index";
             $single = Single::where('id', 3)->first();
-        } else if ($dotPath == "scholarship.register") {
-            $single = Register::where('id', $request->id ?? 1)->first();
         }
 
         return view($dotPath, compact('single'));
-    }
-
-    public function apply(Request $request) {
-        return view('scholarship.apply');
-    }
-
-    public function submitForm(Request $request) {
-        // Validate input
-        $validatedData = $request->validate([
-            'register_date' => 'required|string|max:255',
-            'register_target' => 'required|string|max:255',
-            'register_price' => 'required|string|max:255',
-            'register_qualification' => 'required|string',
-            'register_process' => 'required|string',
-            'register_document' => 'required|string',
-            'register_contact' => 'required|string',
-            'register_agree' => 'required|boolean',
-        ]);
-
-        // Save to the database
-        $register = new Register($validatedData);
-        $register->save();
-
-        return redirect()->route('register.apply')->with('success', 'Form submitted successfully!');
     }
 
     /**

@@ -33,7 +33,7 @@
 <section
 id="home"
 class="bg-cover bg-no-repeat py-40"
-style="background-image: url('{{ $slider[2]->getSliderUrl() }}');"
+style="background-image: url(/images/header_image.png);"
 >
 <div class="container">
     <div class="grid items-center gap-6 lg:grid-cols-2">
