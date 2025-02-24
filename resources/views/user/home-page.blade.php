@@ -455,7 +455,7 @@ class="bg-[url('/public/images/bg-lines-2.png')] bg-cover bg-no-repeat py-40 dar
                                 </a>
                             </li>
                             <li class="flex items-center gap-5 group">
-                                <a href="https://youtube.com/@enochmarymissions?feature=shared" class="relative">
+                                <a href="https://youtube.com/@요셉학교JosephSchool?feature=shared" class="relative">
                                 <img src="images/youtube_icon.png" width="40px" class="absolute mt-2" />
                                 <h5 class="text-base font-medium text-default-800 ml-14 mt-4">유튜브 채널</h5>
                                 </a>

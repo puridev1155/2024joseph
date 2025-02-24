@@ -77,7 +77,7 @@
                         <a href="#">
                             <img src="{{ asset('images/joseph_logo.png') }}" width="180" alt="Logo">
                         </a>
-                        <p class="text-base font-medium  text-default-800 mt-6">에녹메리선교회 장학금 신청은 회원가입 이후에 가능합니다. 아래 버튼을 클릭하여 가입하세요.</p>
+                        <p class="text-base font-medium  text-default-800 mt-6"></p>
                         <div class="relative mt-5">
                             <a href="/registration/form" class="inline-flex text-lg items-center justify-center gap-2 rounded-md bg-primary px-8 py-2 text-white transition-all hover:bg-primary-700"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z"></path>
@@ -92,17 +92,14 @@
                 <div class="">
                     <ul class="flex flex-col gap-3">
                         <h5 class="xl:text-xl lg:text-lg font-medium text-default-800 mb-2">Mission</h5>
-                        <li>
-                            <a href="javascript:void(0);" class="text-base text-default-700 hover:text-default-950 transition-all">선교회</a>
+                                          <li>
+                            <a href="javascript:void(0);" class="text-base text-default-700 hover:text-default-950 transition-all">소개</a>
                         </li>
                         <li>
-                            <a href="javascript:void(0);" class="text-base text-default-700 hover:text-default-950 transition-all">장학회</a>
+                            <a href="javascript:void(0);" class="text-base text-default-700 hover:text-default-950 transition-all">입학안내</a>
                         </li>
                         <li>
-                            <a href="javascript:void(0);" class="text-base text-default-700 hover:text-default-950 transition-all">엔젤리더스</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);" class="text-base text-default-700 hover:text-default-950 transition-all">게시판</a>
+                            <a href="javascript:void(0);" class="text-base text-default-700 hover:text-default-950 transition-all">공지사항</a>
                         </li>
                         <li>
                             <a href="javascript:void(0);" class="text-base text-default-700 hover:text-default-950 transition-all">후원안내</a>
@@ -121,7 +118,7 @@
                                 </a>
                             </li>
                             <li class="flex items-center gap-5 group">
-                                <a href="https://youtube.com/@enochmarymissions?feature=shared" class="relative">
+                                <a href="https://youtube.com/@요셉학교JosephSchool?feature=shared" class="relative">
                                 <img src="images/youtube_icon.png" width="40px" class="absolute mt-2" />
                                 <h5 class="text-base font-medium text-default-800 ml-14 mt-4">유튜브 채널</h5>
                                 </a>
