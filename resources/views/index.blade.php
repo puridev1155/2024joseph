@@ -71,7 +71,7 @@ style="background-image: url(/images/header_image.png);"
                             <img src="{{ asset('images/joseph_logo.png') }}" width="180" alt="Logo">
                         </a>
                         <p class="text-base font-medium  text-default-800 mt-6"></p>
-                        <p class="text-base font-medium  text-default-800 mt-6">우리은행 1005-104-249618 (에녹메리선교회)</p>
+                        <p class="text-base font-medium  text-default-800 mt-6">우리은행 1005-104-249618 (요셉학교)</p>
                         <div class="relative mt-5">
                             <a href="/registration/form" class="inline-flex text-lg items-center justify-center gap-2 rounded-md bg-primary px-8 py-2 text-white transition-all hover:bg-primary-700"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z"></path>
@@ -140,7 +140,7 @@ style="background-image: url(/images/header_image.png);"
         <div class="container flex flex-wrap justify-center items-center h-full md:justify-between text-center md:text-start">
             <p class="text-base font-medium text-default-800">
                 <script>document.write(new Date().getFullYear())</script>
-                © Enoch & Mary Missions Organization</a>
+                © Joseph School</a>
             </p>
             <p class="text-base font-medium text-default-800">
                 <a href="#">Terms Conditions &amp; Policy</a>

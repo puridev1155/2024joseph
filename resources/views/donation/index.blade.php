@@ -270,7 +270,7 @@ class="relative bg-default-100 bg-[url('/public/images/other/bg-lines-2.png')] b
         <div class="container flex flex-wrap justify-center items-center h-full md:justify-between text-center md:text-start">
             <p class="text-base font-medium text-default-800">
                 <script>document.write(new Date().getFullYear())</script>
-                © Enoch & Mary Missions Organization</a>
+                © Joseph School</a>
             </p>
             <p class="text-base font-medium text-default-800">
                 <a href="#">Terms Conditions &amp; Policy</a>

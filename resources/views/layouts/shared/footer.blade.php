@@ -181,7 +181,7 @@
                 <script>
                     document.write(new Date().getFullYear());
                 </script>
-                © Enoch & Mary Missions Organization
+                © Joseph School
             </p>
             <p class="text-base">
                 <a href="#">Terms Conditions & Policy</a>

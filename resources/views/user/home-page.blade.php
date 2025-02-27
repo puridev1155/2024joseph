@@ -485,7 +485,7 @@ class="bg-[url('/public/images/bg-lines-2.png')] bg-cover bg-no-repeat py-40 dar
     <div class="py-4">
         <div class="container flex flex-wrap justify-center items-center h-full md:justify-between text-center md:text-start">
             <p class="text-base font-medium text-default-800">
-                <script>document.write(new Date().getFullYear())</script>© Enoch & Mary Missions Organization</a>
+                <script>document.write(new Date().getFullYear())</script>© Joseph School</a>
             </p>
             <p class="text-base font-medium text-default-800">
                 <a href="#">Terms Conditions &amp; Policy</a>

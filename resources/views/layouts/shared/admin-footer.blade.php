@@ -6,7 +6,7 @@
                 <script>
                     document.write(new Date().getFullYear());
                 </script>
-                © Enoch & Mary Missions Organization
+                © Joseph School
                 <span class="text-red-500">❤️</span> by
                 <a
                     class="text-primary-700"
