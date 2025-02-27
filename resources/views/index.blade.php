@@ -61,13 +61,6 @@ style="background-image: url(/images/header_image.png);"
 </section>
 <!-- SLIDER END -->
 
-
-
-
-
-
-
-    
 <footer>
     <div class="border-y border-default-200">
         <div class="container py-20">
