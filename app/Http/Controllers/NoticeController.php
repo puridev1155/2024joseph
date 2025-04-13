@@ -17,14 +17,13 @@ class NoticeController extends Controller
         $dotPath = str_replace('-', '.', $path);
 
         if($dotPath == "notice") {
-            $single = Post::orderBy('created_at', 'desc')->get();
+            $single = Post::where('category_id', 3)->get();
             $dotPath = "notice.index";
         } else if ($dotPath == "notice.ask") {
             $single = Ask::orderBy('created_at', 'desc')->get();
         } else if ($dotPath == "notice.faq") {
             $single = Single::where('id', 5)->first();
         }
-
         
         return view($dotPath, compact('single'));
     }

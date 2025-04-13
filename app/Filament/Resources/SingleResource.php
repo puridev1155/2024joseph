@@ -47,6 +47,8 @@ class SingleResource extends Resource
                 ->label('영문 제목')
                 ->maxLength(255),
             ]),
+            Hidden::make('category_id')
+            ->default(1),
             Forms\Components\TextInput::make('youtube_url')
             ->label('영상 유튜브 URL')
             ->maxLength(255),
@@ -143,5 +145,11 @@ class SingleResource extends Resource
             return Storage::disk('s3')->url($imageKey);
         }
         return null;
+    }
+
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()
+            ->whereNot('category_id', 3);
     }
 }

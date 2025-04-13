@@ -15,8 +15,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $slider = Slider::get();
-        $posts = Post::selectRaw('id, title, post_thumbnail, created_at')->orderBy('created_at', 'desc')->take(3)->get();
+        $slider = Slider::where('category_id', 2)->get();
+        $posts = Post::selectRaw('id, title, thumbnail, created_at')->orderBy('created_at', 'desc')->take(3)->get();
         $graduates = Graduate::where('location', 1)->get();
         $books = Book::latest()->get();
 

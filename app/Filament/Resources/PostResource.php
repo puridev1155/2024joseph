@@ -25,10 +25,13 @@ use Illuminate\Support\Facades\Storage;
 use Filament\Tables\Filters\SelectFilter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use Filament\Navigation\NavigationGroup;
 use Filament\Navigation\NavigationItem;
 use Filament\Forms\Components\DateTimePicker;
 use Livewire\Livewire;
+use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Log;
 
 class PostResource extends Resource
 {
@@ -36,66 +39,47 @@ class PostResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-folder-open';
 
-    protected static ?string $navigationLabel = '글 관리'; // Custom label in Korean
+    protected static ?string $navigationLabel = '게시판 관리'; // Custom label in Korean
     protected static ?string $navigationGroup = 'Content';
 
     public static function form(Form $form): Form
     {
+
+        Log::info('Request Data:', Request::all()); // Log all the request data
+
         return $form
             ->schema([
-                Grid::make(2)
+                Grid::make(1)
                 ->schema([
-                    Select::make('category_id')
-                            ->label('Category')
-                            ->options(Category::whereNotIn('category_name', ['소개', '질문'])->get()->pluck('category_name', 'id')->toArray())
-                            ->searchable()
-                            ->required()
-                            ->createOptionForm([
-                                TextInput::make('category_name')
-                                    ->label('New Category Name')
-                                    ->required(),
-                            ])
-                            ->afterStateUpdated(function (Select $component, $state) {
-                                if ($state === 'create-new') {
-                                    $component->openModal('createCategoryModal');
-                                }
-                            })
-                            ->createOptionUsing(function ($data) {
-                                return Category::create(['category_name' => $data['category_name']])->id;
-                            }),
                     TextInput::make('title')
                         ->maxLength(255),
                 ]),
+                Hidden::make('category_id')
+                ->default(3),
                 Grid::make(1)
                 ->schema([
-                    FileUpload::make('post_thumbnail')
-                        ->imageEditor()
-                        ->label('썸네일 이미지')
-                        ->disk('s3')
-                        ->directory('post-thumbnail')
-                        //->preserveFilenames()
-                        ->visibility('private')
-                        ->default(fn ($record) => $record ? self::getThumbnailUrl($record) : null)
-                        ->dehydrateStateUsing(fn ($state) => json_encode($state)),
+                    FileUpload::make('thumbnail')
+                    ->label('썸네일 이미지 1MB 미만')
+                    ->image()
+                    ->imageEditor()
+                    ->disk('public')
+                    ->directory('thumbnail')
+                    ->preserveFilenames()
+                    ->getUploadedFileNameForStorageUsing(
+                        fn (TemporaryUploadedFile $file): string =>
+                            now()->timestamp . '-' . $file->getClientOriginalName()
+                    )
+                    ->maxSize(30720)
+                    
                 ]),
                 RichEditor::make('content')
-                ->fileAttachmentsDisk('s3')
-                ->fileAttachmentsDirectory('attachments')
-                ->fileAttachmentsVisibility('private')
-                ->columnSpanFull(),
-                Grid::make(1)
-                ->schema([
-                    FileUpload::make('post_images')
-                        ->helperText('여러 파일 등록 가능')
-                        ->label('파일')
-                        ->disk('s3')
-                        ->directory('post-images')
-                        ->multiple()
-                        //->preserveFilenames()
-                        ->visibility('public')
-                        ->default(fn ($record) => $record ? json_decode($record->post_images, true) : [])
-                        ->dehydrateStateUsing(fn ($state) => is_array($state) ? json_encode($state) : $state),
-                ]),
+                ->fileAttachmentsDisk('public') 
+                ->fileAttachmentsDirectory('contents') 
+                ->fileAttachmentsVisibility('public') 
+                ->columnSpanFull()
+                ->dehydrateStateUsing(function ($state) {
+                    return $state;
+                }),       
                 Forms\Components\TextInput::make('user_id')
                     ->required()
                     ->default(1)
@@ -115,10 +99,10 @@ class PostResource extends Resource
                     ->searchable()
                     ->sortable()
                     ->width('50px'),
-                Tables\Columns\ImageColumn::make('post_thumbnail')
-                    ->label('이미지')
-                    ->disk('s3')
-                    ->width('80px'), // Adjust the width as needed
+                ImageColumn::make('thumbnail')
+                    ->label('썸네일')
+                    ->width('150px')
+                    ->height('200px'),
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
@@ -167,13 +151,30 @@ class PostResource extends Resource
         ];
     }
 
-    protected static function getThumbnailUrl($record)
+    public static function getThumbnailUrl($record)
     {
-        if ($record && $record->post_thumbnail) {
-            $postThumbnail = json_decode($record->post_thumbnail, true);
-            $imageKey = reset($postThumbnail);
-            return Storage::disk('s3')->url($imageKey);
+        $data = $record->thumbnail;
+    
+        if (is_string($data)) {
+            $data = json_decode($data, true);
         }
-        return null;
+    
+        $filename = $data['name'] ?? null;
+    
+        return $filename
+            ? asset('storage/public/thumbnail/' . $filename)
+            : null;
     }
+
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()
+            ->where('category_id', 3);
+    }
+
+    
+
+
+    
+    
 }

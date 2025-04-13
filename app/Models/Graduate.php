@@ -17,11 +17,11 @@ class Graduate extends Model
         'group_id',
         'location',
         'graduate_name',
-        'graduate_thumbnail',
+        'thumbnail',
     ];
 
     protected $casts = [
-        'graduate_thumbnail' => 'json'
+        'thumbnail' => 'string'
     ];
 
     public function user()
@@ -40,17 +40,12 @@ class Graduate extends Model
         $this->attributes['graduate_thumbnail'] = is_string($value) ? $value : json_encode($value);
     }
 
-    public function getThumbnailUrl()
+    public function getThumbnailUrlAttribute(): ?string
     {
-        if ($this->graduate_thumbnail) {
-            // Check if graduate_thumbnail is already an array
-            $graduateThumbnail = is_array($this->graduate_thumbnail) ? $this->graduate_thumbnail : json_decode($this->graduate_thumbnail, true);
-    
-            if ($graduateThumbnail && is_array($graduateThumbnail)) {
-                $imageKey = reset($graduateThumbnail);
-                return Storage::disk('s3')->url($imageKey);
-            }
-        }
-        return null;
+
+        return $this->thumbnail
+        ? Storage::disk('public')->url($this->thumbnail)
+        : '';
     }
+
 }

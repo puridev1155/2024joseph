@@ -15,11 +15,13 @@ class Book extends Model
         'title',
         'url',
         'content',
+        'thumbnail',
         'book_image'
     ];
 
     protected $casts = [
         'book_image' => 'json', // Cast the profile_images attribute to an array
+        'thumbnail' => 'string',
     ];
 
     // Ensure the model handles file uploads correctly
@@ -40,5 +42,13 @@ class Book extends Model
             }
         }
         return null;
+    }
+
+    public function getThumbnailUrlAttribute(): ?string
+    {
+
+        return $this->thumbnail
+        ? Storage::disk('public')->url($this->thumbnail)
+        : '';
     }
 }

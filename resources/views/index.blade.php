@@ -41,7 +41,7 @@ style="background-image: url(/images/header_image.png);"
             <div class="max-w-lg text-center lg:text-start">
                 
                 <img
-                src="{{ $slider[0]->getSliderUrl() }}"
+                src="{{ asset('storage/' . $slider[0]->thumbnail) }}"
                 class="h-full w-full"
                 alt=""
             />
@@ -50,7 +50,7 @@ style="background-image: url(/images/header_image.png);"
 
         <div>
             <a href="/scholarship-register"><img
-                src="{{ $slider[1]->getSliderUrl() }}"
+                src="{{ asset('storage/' . $slider[1]->thumbnail) }}"
                 class="h-full w-full"
                 alt=""
             /></a>

@@ -19,11 +19,11 @@ class MissionController extends Controller
 
         if($dotPath == "school") {
             $dotPath = "school.index";
-            $single = Single::where('id', 1)->first();
+            $single = Single::where('id', 7)->first();
         } else if ($dotPath == "school.organization") {
             $single = Single::where('id', 2)->first();
         } else if ($dotPath == "school.curriculum") {
-            $single = Single::where('id', 3)->first();
+            $single = Single::where('id', 8)->first();
         } else {
             $single = NULL;
         }

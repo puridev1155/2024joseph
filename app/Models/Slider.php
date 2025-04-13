@@ -15,11 +15,13 @@ class Slider extends Model
         'title',
         'url',
         'content',
+        'thumbnail',
         'slider_image'
     ];
 
     protected $casts = [
         'slider_image' => 'json', // Cast the profile_images attribute to an array
+        'thumbnail' => 'string'
     ];
 
     // Ensure the model handles file uploads correctly
@@ -28,17 +30,11 @@ class Slider extends Model
         $this->attributes['slider_image'] = is_string($value) ? $value : json_encode($value);
     }
 
-    public function getSliderUrl()
+    public function getThumbnailUrlAttribute(): ?string
     {
-        if ($this->slider_image) {
-            // Check if post_thumbnail is already an array
-            $sliderImage = is_array($this->slider_image) ? $this->slider_image : json_decode($this->slider_image, true);
-    
-            if ($sliderImage && is_array($sliderImage)) {
-                $imageKey = reset($sliderImage);
-                return Storage::disk('s3')->url($imageKey);
-            }
-        }
-        return null;
+        return $this->thumbnail
+            ? asset('storage/thumbnail/' . $this->thumbnail)
+            : null;
     }
+    
 }

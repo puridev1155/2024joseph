@@ -186,6 +186,12 @@ class UserResource extends Resource
         ];
     }
 
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()
+            ->whereNot('category_id', 1);
+    }
+
     //https://filamentphp.com/docs/2.x/admin/resources/widgets
 
 }
