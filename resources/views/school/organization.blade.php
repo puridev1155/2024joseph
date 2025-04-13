@@ -37,8 +37,8 @@
                     <div class="p-6 relative">
                         <div class="flex h-full items-center justify-center py-5">
                             <div class="text-center max-w-3xl mx-auto relative">
-                                <span class="py-1 px-3 rounded-md text-sm font-medium uppercase tracking-wider text-white bg-white/10">{{ $single->en_title }}</span>
-                                <h1 class="md:text-5xl/snug text-3xl font-bold text-white mt-3">{{ $single->title }}</h1>
+                                <span class="py-1 px-3 rounded-md text-sm font-medium uppercase tracking-wider text-white bg-white/10">Professor</span>
+                                <h1 class="md:text-5xl/snug text-3xl font-bold text-white mt-3">강사 안내</h1>
                             
                             </div>
                         </div><!-- flex End -->
@@ -52,8 +52,8 @@
     <div class="bg-white py-24 sm:py-32">
         
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
-            <p class="text-base font-semibold leading-7 text-indigo-600">{{ $single->en_title }}</p>
-            <h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{ $single->title }}</h1>
+            <p class="text-base font-semibold leading-7 text-indigo-600">Professor</p>
+            <h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">강사 안내</h1>
           <div class="mx-auto grid max-w-2xl grid-cols-1 items-start gap-x-8 gap-y-20 sm:gap-y-24 lg:mx-0 lg:max-w-none lg:grid-cols-3">
             <div>
                 <div class="text-base leading-7 text-gray-700 lg:max-w-lg">

@@ -20,7 +20,11 @@ class ScholarshipController extends Controller
 
         if($dotPath == "admission") {
             $dotPath = "admission.index";
-            $single = Single::where('id', 3)->first();
+            if($request->id) {
+                $single = Register::where('id', 4)->first();
+            } else {
+                $single = Register::where('id', 3)->first();
+            }
         }
 
         return view($dotPath, compact('single'));

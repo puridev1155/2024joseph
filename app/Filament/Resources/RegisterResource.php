@@ -127,4 +127,10 @@ class RegisterResource extends Resource
             'edit' => Pages\EditRegister::route('/{record}/edit'),
         ];
     }
+
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()
+            ->whereIn('id', [4,3]);
+    }
 }
