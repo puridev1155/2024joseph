@@ -6,6 +6,7 @@ use App\Models\Book;
 use App\Models\Post;
 use App\Models\Graduate;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -15,12 +16,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $slider = Slider::where('category_id', 2)->get();
-        $posts = Post::selectRaw('id, title, thumbnail, created_at')->orderBy('created_at', 'desc')->take(3)->get();
-        $graduates = Graduate::where('location', 1)->get();
-        $books = Book::latest()->get();
+        $slider = DB::table('sliders')->where('category_id', 2)->get();
 
-        return view('index',compact('posts', 'graduates', 'books', 'slider'));
+        return view('index',compact('slider'));
     }
 
     /**

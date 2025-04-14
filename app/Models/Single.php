@@ -17,25 +17,25 @@ class Single extends Model
         'en_title',
         'content',
         'youtube_url',
-        'single_thumbnail'
+        'thumbnail'
     ];
 
     protected $casts = [
-        'single_thumbnail' => 'json'
+        'thumbnail' => 'string'
     ];
 
 
-    public function getThumbnailUrl()
+    public function getThumbnailUrlAttribute(): ?string
     {
-        if ($this->single_thumbnail) {
-            // Check if post_thumbnail is already an array
-            $singleThumbnail = is_array($this->single_thumbnail) ? $this->single_thumbnail : json_decode($this->single_thumbnail, true);
-    
-            if ($singleThumbnail && is_array($singleThumbnail)) {
-                $imageKey = reset($singleThumbnail);
-                return Storage::disk('s3')->url($imageKey);
-            }
-        }
-        return null;
+
+        return $this->thumbnail
+        ? Storage::disk('public')->url($this->thumbnail)
+        : '';
+    }
+
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()
+            ->whereNot('category_id', 3);
     }
 }

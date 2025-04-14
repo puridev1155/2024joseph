@@ -37,33 +37,17 @@ class RegisterResource extends Resource
     {
         return $form
             ->schema([
-                Grid::make(3)
-                ->schema([
                 Forms\Components\TextInput::make('register_date')
                 ->label('신청기간')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('register_target')
-                ->label('지원대상')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('register_price')
-                ->label('지원금액')
-                    ->maxLength(255),
-                ]),
-                
+                ->maxLength(255),
                 RichEditor::make('register_qualification')
-                ->label('지원자격')
+                ->label('입학자격')
                     ->fileAttachmentsDisk('s3')
                     ->fileAttachmentsDirectory('attachments')
                     ->fileAttachmentsVisibility('public')
                     ->columnSpanFull(),
                 RichEditor::make('register_process')
-                ->label('지원절차')
-                    ->fileAttachmentsDisk('s3')
-                    ->fileAttachmentsDirectory('attachments')
-                    ->fileAttachmentsVisibility('public')
-                    ->columnSpanFull(),
-                RichEditor::make('register_document')
-                ->label('제출서류')
+                ->label('모집인원')
                     ->fileAttachmentsDisk('s3')
                     ->fileAttachmentsDirectory('attachments')
                     ->fileAttachmentsVisibility('public')
@@ -77,7 +61,7 @@ class RegisterResource extends Resource
                 Forms\Components\Toggle::make('register_agree')
                 ->label('신청서 오픈')
                 ->helperText('닫을 경우 신청서는 종료됩니다.')
-                    ->required(),
+                ->required(),
             ]);
     }
 

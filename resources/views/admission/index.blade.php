@@ -9,33 +9,18 @@
     'menuPosition' => 'fixed',
     'navItems' => [
         (object)['id' => '홈','name' => '홈', 'url' => '/'],
-        (object)['id' => '선교회','name' => '선교회', 'url' => '#', 'subMenu' => 
+        (object)['id' => '소개','name' => '소개', 'url' => '#', 'subMenu' => 
         [
-            (object)['name' => '소개', 'url' => '/mission'],
-            (object)['name' => '조직도', 'url' => '/mission-organization'],
-            (object)['name' => '로고', 'url' => '/mission-logo'],
+            (object)['name' => '학교소개', 'url' => '/school'],
+            (object)['name' => '교사소개', 'url' => '/school-organization'],
+            (object)['name' => '커리큘럼', 'url' => '/school-curriculum'],
             
         ]],
-        (object)['id' => '장학회','name' => '장학회', 'url' => '#', 'subMenu' => 
+        (object)['id' => '입학안내','name' => '입학안내', 'url' => '#', 'subMenu' => 
         [
-            (object)['name' => '소개', 'url' => '/scholarship'],
-            (object)['name' => '장학금 신청', 'url' => '/scholarship-register'],
-            
+            (object)['name' => '입학안내정보', 'url' => '/admission'],
         ]],
-        (object)['id' => '엔젤리더스','name' => '엔젤리더스', 'url' => '#', 'subMenu' => 
-        [
-            (object)['name' => '소개', 'url' => '/leader'],
-            (object)['name' => '졸업생 사진', 'url' => '/leader-graduate'],
-           
-            
-        ]],
-        (object)['id' => '게시판','name' => '게시판', 'url' => '#', 'subMenu' => 
-        [
-            (object)['name' => '공지사항', 'url' => '/notice'],
-            (object)['name' => '게시판', 'url' => '/notice-ask'],
-            (object)['name' => 'FAQ', 'url' => '/notice-faq'],
-            
-        ]],
+        (object)['id' => '공지사항','name' => '공지사항', 'url' => '/notice'],
         (object)['id' => '후원안내','name' => '후원안내', 'url' => '#', 'subMenu' => 
         [
             (object)['name' => '후원안내', 'url' => '/donation'],            
@@ -161,10 +146,10 @@ $id= request()->query('id');
                         </div>
                         <div>
                             <h3 class="text-2xl font-medium text-default-950">
-                               지원대상
+                               입학자격
                             </h3>
                             <p class="mt-3 text-base">
-                                {!! $single->register_target !!}
+                                {!! $single->register_qualification !!}
                             </p>
                         </div>
                     </div>
@@ -180,13 +165,15 @@ $id= request()->query('id');
                         </div>
                         <div>
                             <h3 class="text-2xl font-medium text-default-950">
-                                지원자격
+                                모집 학생 인원
                             </h3>
                             <p class="mt-3 text-base">
-                                {!! $single->register_qualification !!}
+                                {!! $single->register_process !!}
                             </p>
                         </div>
                     </div>
+                    
+
                     <!-- flex End-->
 
                     <div class="flex flex-wrap items-center gap-6 p-6 sm:flex-nowrap">
@@ -195,65 +182,6 @@ $id= request()->query('id');
                                 class="flex size-12 items-center justify-center rounded-md border border-default-200 bg-white/5 text-xl text-default-950"
                             >
                                 04
-                            </div>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-medium text-default-950">
-                                지원금액
-                            </h3>
-                            <p class="mt-3 text-base">
-                                {!! $single->register_price !!}
-                            </p>
-                        </div>
-                    </div>
-                    <!-- flex End-->
-
-                    <div class="flex flex-wrap items-center gap-6 p-6 sm:flex-nowrap">
-                        <div class="hidden md:block">
-                            <div
-                                class="flex size-12 items-center justify-center rounded-md border border-default-200 bg-white/5 text-xl text-default-950"
-                            >
-                                05
-                            </div>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-medium text-default-950">
-                                지원절차
-                            </h3>
-                            <p class="mt-3 text-base">
-                                {!! $single->register_process !!}
-                            </p>
-                        </div>
-                    </div>
-                    <!-- flex End-->
-
-                    <div class="flex flex-wrap items-center gap-6 p-6 sm:flex-nowrap">
-                        <div class="hidden md:block">
-                            <div
-                                class="flex size-12 items-center justify-center rounded-md border border-default-200 bg-white/5 text-xl text-default-950"
-                            >
-                                06
-                            </div>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-medium text-default-950">
-                                제출서류
-                            </h3>
-                            <p class="mt-3 text-base">
-                                {!! $single->register_document !!}
-                            </p>
-                        </div>
-                    </div>
-                    <!-- flex End-->
-
-                    <!-- flex End-->
-
-                    <div class="flex flex-wrap items-center gap-6 p-6 sm:flex-nowrap">
-                        <div class="hidden md:block">
-                            <div
-                                class="flex size-12 items-center justify-center rounded-md border border-default-200 bg-white/5 text-xl text-default-950"
-                            >
-                                07
                             </div>
                         </div>
                         <div>
@@ -278,8 +206,6 @@ $id= request()->query('id');
 </section>
 <!-- End Services -->
 
-
-    
 <footer>
     <div class="border-y border-default-200">
         <div class="container py-20">

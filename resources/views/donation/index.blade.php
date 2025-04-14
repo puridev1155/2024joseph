@@ -54,9 +54,11 @@
         <div class="flex items-end justify-between mb-10">
             <div class="max-w-2xl mx-auto text-center">
                 <h2 class="md:text-4xl/tight text-3xl font-medium capitalize text-default-950 mt-4">후원자를 사역의 동역자로</h2>
-                <p class="text-base font-medium mt-4">에녹메리선교회는 후원자를 사역의 동역자로 생각합니다. 우리가 하나님과 사람들로부터 관대한 후원을 받은 것같이 우리도 하나님의 손길이 필요한 자들에게 관대한 후원자들이 되어야 한다고 믿습니다.</p>
-                <p class="text-base font-medium mt-6">에녹메리선교회를 후원하실 수 있는 영역은 다음과 같습니다.</p>
-                <p class="text-3xl font-bold mt-8"><a href="#" onclick='copyToClipboard("1005104249618")'>우리은행 1005-104-249618 (에녹메리선교회)</a></p>
+                <p class="text-base font-medium mt-4">“후원자를 사역의 동역자로” 
+                    요셉학교는 후원자를 사역의 동역자로 생각합니다.
+                    </p>
+                <p class="text-base font-medium mt-6">우리가 하나님과 사람들로부터 관대한 후원을 받은 것같이 우리도 하나님의 손길이 필요한 자들에게 관대한 후원자들이 되어야 한다고 믿습니다. </p>
+                <p class="text-3xl font-bold mt-8"><a href="#" onclick='copyToClipboard("1005104249618")'>신한은행 140-009-275680 열방제자교회(요셉학교) </a></p>
             </div>
         </div><!-- flex End -->
     </div>

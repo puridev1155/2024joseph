@@ -22,13 +22,7 @@
             (object)['name' => '장학금 신청', 'url' => '/scholarship-register'],
             
         ]],
-        (object)['id' => '엔젤리더스','name' => '엔젤리더스', 'url' => '#', 'subMenu' => 
-        [
-            (object)['name' => '소개', 'url' => '/leader'],
-            (object)['name' => '졸업생 사진', 'url' => '/leader-graduate'],
-           
-            
-        ]],
+
         (object)['id' => '게시판','name' => '게시판', 'url' => '#', 'subMenu' => 
         [
             (object)['name' => '공지사항', 'url' => '/notice'],

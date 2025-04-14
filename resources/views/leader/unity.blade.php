@@ -25,7 +25,7 @@
         (object)['id' => '엔젤리더스','name' => '엔젤리더스', 'url' => '#', 'subMenu' => 
         [
             (object)['name' => '소개', 'url' => '/leader'],
-            (object)['name' => '졸업생 사진', 'url' => '/leader-graduate'],
+            
             (object)['name' => '단합대회', 'url' => '/leader-unity'],
            
             

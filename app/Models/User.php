@@ -69,5 +69,11 @@ class User extends Authenticatable implements FilamentUser
         return $this->hasRole(['Admin', 'Editor']);
     }
 
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()
+            ->whereNot('category_id', 1);
+    }
+
     
 }
